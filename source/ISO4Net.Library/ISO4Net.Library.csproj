@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2EEA8988-9A92-4030-B1EC-1B51FFE55317}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ISO4Net.Library</RootNamespace>
+    <AssemblyName>ISO4Net.Library</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Encoders\FA_Amount.cs" />
+    <Compile Include="Encoders\FA_Binary.cs" />
+    <Compile Include="Encoders\FA_Bitmap.cs" />
+    <Compile Include="Encoders\FA_Char.cs" />
+    <Compile Include="Encoders\FA_Number.cs" />
+    <Compile Include="Encoders\LLLA_Number.cs" />
+    <Compile Include="Encoders\LLLA_Char.cs" />
+    <Compile Include="Encoders\LLA_Char.cs" />
+    <Compile Include="Encoders\LLA_Number.cs" />
+    <Compile Include="GenericPackager.cs" />
+    <Compile Include="IPadder.cs" />
+    <Compile Include="IPrefix.cs" />
+    <Compile Include="ISOAmountFieldEncoder.cs" />
+    <Compile Include="ISOBinaryField.cs" />
+    <Compile Include="ISOBitmap.cs" />
+    <Compile Include="ISOBitmapEncoder.cs" />
+    <Compile Include="ISOComponent.cs" />
+    <Compile Include="ISOException.cs" />
+    <Compile Include="ISOField.cs" />
+    <Compile Include="ISOFieldBinary.cs" />
+    <Compile Include="ISOFieldEncoder.cs" />
+    <Compile Include="ISOHeader.cs" />
+    <Compile Include="ISOMessage.cs" />
+    <Compile Include="ISOPackager.cs" />
+    <Compile Include="ISOBinaryFieldEncoder.cs" />
+    <Compile Include="ISOStringFieldEncoder.cs" />
+    <Compile Include="ITranslator.cs" />
+    <Compile Include="ITranslatorBinary.cs" />
+    <Compile Include="Padders\PaddingLeft.cs" />
+    <Compile Include="Padders\PaddingNone.cs" />
+    <Compile Include="Padders\PaddingRight.cs" />
+    <Compile Include="Prefixers\PrefixASCII.cs" />
+    <Compile Include="Prefixers\PrefixBCD.cs" />
+    <Compile Include="Prefixers\PrefixNone.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Translators\TranslatorBinary.cs" />
+    <Compile Include="Translators\TranslatorASCII.cs" />
+    <Compile Include="Translators\TranslatorHexASCII.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Packagers\iso87_ascii.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
