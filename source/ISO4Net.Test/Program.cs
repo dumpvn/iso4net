@@ -54,7 +54,7 @@ namespace OpenTrx.NET {
             ISOMessage response = new ISOMessage();
             p.Decode(response, packed200);
             Console.WriteLine("Decoding result:");
-            response.Dump(true);
+            Console.WriteLine(response.Dump(true));
 
         }
     }
