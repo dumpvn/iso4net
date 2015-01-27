@@ -1,4 +1,4 @@
-# iso4net
+# ISO4Net
 
 ISO4Net is a .NET library used to handle Financial messages based  on the ISO8583 standard. It's currently a 
 work in progress and this documentation will be updated shortly.
