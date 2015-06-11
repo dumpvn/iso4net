@@ -40,7 +40,9 @@ namespace OpenTrx.NET {
             request.Add(42, "88991740");
             request.Add(49, "840");
             request.Add(52, new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF });
-            //m.Add(70, "123");
+            request.Add(64, new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF });
+            request.Add(70, "123");
+            request.Add(128, new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF });
 
             Console.WriteLine("Encoding 0200 message...");
             byte[] packed200 = request.Encode();

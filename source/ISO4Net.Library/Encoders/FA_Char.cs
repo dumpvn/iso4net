@@ -1,6 +1,6 @@
 ﻿/*
  * 
- * ISO4Net - http://iso4net.codeplex.com/
+ * ISO4Net - http://github.com/iso4Net
  * Copyright (C) 2014 Robert Barreiro (rbarreiro@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,9 +27,6 @@ namespace ISO4Net.Library.Encoders {
 
     /// <summary>
     /// Fixed length, ASCII Char (Right padded with spaces)
-    /// 
-    /// AUTHOR: Robert B.
-    /// 
     /// </summary>
     public class FA_Char : ISOStringFieldEncoder {
 

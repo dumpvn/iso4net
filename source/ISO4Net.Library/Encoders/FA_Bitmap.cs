@@ -1,6 +1,6 @@
 ﻿/*
  * 
- * ISO4Net - http://iso4net.codeplex.com/
+ * ISO4Net - http://github.com/iso4Net
  * Copyright (C) 2014 Robert Barreiro (rbarreiro@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -52,8 +52,6 @@ namespace ISO4Net.Library.Encoders {
         public override int Decode(ISOComponent component, byte[] data, int offset) {
 
             int length;
-
-            //BitArray bitmap = Utils.Hex2BitArray(data, offset, (Length / 2) * 8);           // 2 chars represents 1 byte and has 8 bits
             BitArray bitmap = Utils.Hex2BitArray(data, offset, (Length << 3));
             component.Value = bitmap;
 

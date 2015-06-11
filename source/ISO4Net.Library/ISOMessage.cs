@@ -1,6 +1,6 @@
 ﻿/*
  * 
- * ISO4Net - http://openeft.codeplex.com/
+ * ISO4Net - http://github.com/iso4Net
  * Copyright (C) 2014 Robert Barreiro (rbarreiro@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,7 +29,7 @@ namespace ISO4Net.Library {
     /// <summary>
     /// General ISO Message implementation
     /// </summary>
-    public class ISOMessage : ISOComponent, ICloneable {
+    public class ISOMessage : ISOComponent, ICloneable, IDisposable {
 
         #region Protected
 
@@ -241,7 +241,7 @@ namespace ISO4Net.Library {
             if (_changed) {
 
                 int tp = Math.Min(TopField, 192);
-                BitArray bmp = new BitArray(((tp + 62) >> 6) << 6);
+                BitArray bmp = new BitArray((tp + 62 >> 6 << 6) + 1);
 
                 for (int i = 1; i <= tp; i++) {
                     if (_fields.ContainsKey(i))
@@ -302,6 +302,14 @@ namespace ISO4Net.Library {
             m.RefreshBitmap();
 
             return m;
+        }
+
+        #endregion
+
+        #region IDisposable
+
+        public void Dispose() {
+            if (_fields != null) _fields.Clear();
         }
 
         #endregion
